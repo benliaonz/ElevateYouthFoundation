@@ -16,6 +16,12 @@ export interface Stat {
   suffix?: string;
 }
 
+export interface Trustee {
+  name: string;
+  role: string;
+  bio: string;
+}
+
 export interface ChatMessage {
   role: 'user' | 'model';
   text: string;

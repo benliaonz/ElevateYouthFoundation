@@ -15,12 +15,15 @@ export default function Hero() {
       
       <div className="relative max-w-7xl mx-auto py-32 px-4 sm:py-48 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
+          <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-indigo-500/20 border border-indigo-400/30 backdrop-blur-sm">
+            <span className="text-indigo-300 text-xs font-bold tracking-widest uppercase">Based in Auckland, New Zealand</span>
+          </div>
           <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-6xl lg:text-7xl mb-8 leading-tight">
             Elevate Their <br />
             <span className="text-indigo-400">Potential.</span>
           </h1>
           <p className="mt-6 text-xl text-indigo-100/80 max-w-2xl leading-relaxed">
-            {MISSION_STATEMENT} We build bridges of opportunity for youth who dare to dream big and work hard.
+            {MISSION_STATEMENT} We build bridges of opportunity for Kiwi youth to grow, lead, and contribute to our society.
           </p>
           <div className="mt-12 flex flex-col sm:flex-row gap-5">
             <button className="bg-indigo-600 text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-indigo-500 transition-all shadow-xl shadow-indigo-900/20 active:scale-95">

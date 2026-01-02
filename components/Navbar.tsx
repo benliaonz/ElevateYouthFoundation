@@ -21,7 +21,9 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-10">
             <a href="#about" className="text-slate-600 hover:text-indigo-900 transition-colors font-medium">About</a>
             <a href="#programs" className="text-slate-600 hover:text-indigo-900 transition-colors font-medium">Programs</a>
+            <a href="#trustees" className="text-slate-600 hover:text-indigo-900 transition-colors font-medium">Trustees</a>
             <a href="#impact" className="text-slate-600 hover:text-indigo-900 transition-colors font-medium">Impact</a>
+            <a href="#contact" className="text-slate-600 hover:text-indigo-900 transition-colors font-medium">Contact</a>
             <button className="bg-indigo-950 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-indigo-900 transition-all shadow-md active:scale-95">
               Donate Now
             </button>
@@ -44,7 +46,9 @@ export default function Navbar() {
           <div className="px-4 pt-4 pb-6 space-y-2">
             <a href="#about" onClick={() => setIsOpen(false)} className="block px-3 py-3 text-base font-medium text-slate-600 hover:text-indigo-900 hover:bg-indigo-50 rounded-lg">About</a>
             <a href="#programs" onClick={() => setIsOpen(false)} className="block px-3 py-3 text-base font-medium text-slate-600 hover:text-indigo-900 hover:bg-indigo-50 rounded-lg">Programs</a>
+            <a href="#trustees" onClick={() => setIsOpen(false)} className="block px-3 py-3 text-base font-medium text-slate-600 hover:text-indigo-900 hover:bg-indigo-50 rounded-lg">Trustees</a>
             <a href="#impact" onClick={() => setIsOpen(false)} className="block px-3 py-3 text-base font-medium text-slate-600 hover:text-indigo-900 hover:bg-indigo-50 rounded-lg">Impact</a>
+            <a href="#contact" onClick={() => setIsOpen(false)} className="block px-3 py-3 text-base font-medium text-slate-600 hover:text-indigo-900 hover:bg-indigo-50 rounded-lg">Contact</a>
             <div className="pt-4 px-3">
               <button className="w-full bg-indigo-950 text-white px-5 py-4 rounded-xl font-bold hover:bg-indigo-900 transition-colors">
                 Donate Now
