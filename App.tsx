@@ -12,18 +12,33 @@ import Footer from './components/Footer';
 function App() {
   const [currentPage, setCurrentPage] = useState('index');
 
-  useEffect(() => {
+  const updatePageFromPath = () => {
     const path = window.location.pathname;
     const fileName = path.split('/').pop() || 'index.html';
     const page = fileName.replace('.html', '');
-    // Handle root path or index.html
+    
     if (page === 'index' || page === '') {
       setCurrentPage('index');
     } else {
       setCurrentPage(page);
     }
-    // Scroll to top on page change
     window.scrollTo(0, 0);
+  };
+
+  useEffect(() => {
+    // Initial load
+    updatePageFromPath();
+
+    // Listen for browser back/forward buttons
+    window.addEventListener('popstate', updatePageFromPath);
+    
+    // Custom event for internal navigation clicks
+    window.addEventListener('app-nav-change', updatePageFromPath);
+
+    return () => {
+      window.removeEventListener('popstate', updatePageFromPath);
+      window.removeEventListener('app-nav-change', updatePageFromPath);
+    };
   }, []);
 
   const SubPageHeader = ({ title, subtitle }: { title: string; subtitle?: string }) => (
@@ -94,7 +109,6 @@ function App() {
       <main>
         {renderContent()}
         
-        {/* Uniform CTA for sub-pages to maintain funnel flow */}
         {currentPage !== 'contact' && currentPage !== 'index' && (
           <section className="bg-indigo-50 py-24 border-t border-indigo-100">
             <div className="max-w-4xl mx-auto px-4 text-center">
@@ -106,9 +120,15 @@ function App() {
                 <button className="bg-indigo-600 text-white px-12 py-4 rounded-full font-black text-lg hover:bg-indigo-500 transition-all shadow-xl shadow-indigo-600/20 active:scale-95">
                   Donate Now
                 </button>
-                <a href="contact.html" className="text-indigo-950 font-bold hover:text-indigo-600 transition-colors flex items-center">
+                <button 
+                  onClick={() => {
+                    window.history.pushState({}, '', 'contact.html');
+                    window.dispatchEvent(new CustomEvent('app-nav-change'));
+                  }}
+                  className="text-indigo-950 font-bold hover:text-indigo-600 transition-colors flex items-center"
+                >
                   Inquire about volunteering <span className="ml-2">&rarr;</span>
-                </a>
+                </button>
               </div>
             </div>
           </section>

@@ -1,33 +1,70 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
 interface NavLinkProps {
   href: string;
-  // Fixed: Made children optional to resolve the TS error: 
-  // "Property 'children' is missing in type '{ href: string; }' but required in type 'NavLinkProps'"
-  // which can occur in certain build environments when text is passed as a child node.
   children?: React.ReactNode;
 }
 
-const NavLink = ({ href, children }: NavLinkProps) => (
-  <a 
-    href={href} 
-    className="text-slate-600 hover:text-indigo-900 transition-colors font-semibold tracking-tight text-sm uppercase tracking-wider"
-  >
-    {children}
-  </a>
-);
+const NavLink = ({ href, children }: NavLinkProps) => {
+  const [isActive, setIsActive] = useState(false);
+
+  useEffect(() => {
+    const checkActive = () => {
+      const currentPath = window.location.pathname;
+      const targetPath = '/' + href;
+      setIsActive(currentPath === targetPath || (currentPath === '/' && href === 'index.html'));
+    };
+    checkActive();
+    window.addEventListener('popstate', checkActive);
+    window.addEventListener('app-nav-change', checkActive);
+    return () => {
+      window.removeEventListener('popstate', checkActive);
+      window.removeEventListener('app-nav-change', checkActive);
+    };
+  }, [href]);
+
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.history.pushState({}, '', href);
+    window.dispatchEvent(new CustomEvent('app-nav-change'));
+  };
+
+  return (
+    <a 
+      href={href} 
+      onClick={handleClick}
+      className={`transition-all font-semibold tracking-tight text-sm uppercase tracking-wider relative py-1 ${
+        isActive ? 'text-indigo-900' : 'text-slate-500 hover:text-indigo-900'
+      }`}
+    >
+      {children}
+      {isActive && (
+        <span className="absolute bottom-0 left-0 w-full h-0.5 bg-indigo-600 rounded-full animate-in fade-in zoom-in duration-300"></span>
+      )}
+    </a>
+  );
+};
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleMobileClick = (href: string) => {
+    setIsOpen(false);
+    window.history.pushState({}, '', href);
+    window.dispatchEvent(new CustomEvent('app-nav-change'));
+  };
 
   return (
     <nav className="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-indigo-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           <div className="flex items-center">
-            <a href="index.html" className="flex items-center group">
+            <a 
+              href="index.html" 
+              onClick={(e) => { e.preventDefault(); handleMobileClick('index.html'); }}
+              className="flex items-center group"
+            >
               <div className="flex flex-col">
                  <span className="font-black text-2xl tracking-tighter text-indigo-950 leading-none">ELEVATE</span>
                  <span className="text-[9px] tracking-[0.2em] font-bold text-indigo-600 uppercase">Youth Foundation</span>
@@ -36,7 +73,6 @@ export default function Navbar() {
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
-            {/* Fixed the following lines which were previously causing TS errors */}
             <NavLink href="about.html">About</NavLink>
             <NavLink href="programs.html">Programs</NavLink>
             <NavLink href="trustees.html">Trustees</NavLink>
@@ -62,11 +98,16 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden bg-white border-t border-indigo-50 animate-in fade-in slide-in-from-top-4 duration-300">
           <div className="px-4 pt-4 pb-8 space-y-1">
-            <a href="about.html" className="block px-4 py-4 text-lg font-bold text-slate-700 hover:text-indigo-950 hover:bg-indigo-50 rounded-2xl transition-all">About</a>
-            <a href="programs.html" className="block px-4 py-4 text-lg font-bold text-slate-700 hover:text-indigo-950 hover:bg-indigo-50 rounded-2xl transition-all">Programs</a>
-            <a href="trustees.html" className="block px-4 py-4 text-lg font-bold text-slate-700 hover:text-indigo-950 hover:bg-indigo-50 rounded-2xl transition-all">Trustees</a>
-            <a href="impact.html" className="block px-4 py-4 text-lg font-bold text-slate-700 hover:text-indigo-950 hover:bg-indigo-50 rounded-2xl transition-all">Impact</a>
-            <a href="contact.html" className="block px-4 py-4 text-lg font-bold text-slate-700 hover:text-indigo-950 hover:bg-indigo-50 rounded-2xl transition-all">Contact</a>
+            {['about.html', 'programs.html', 'trustees.html', 'impact.html', 'contact.html'].map((href) => (
+              <a 
+                key={href}
+                href={href} 
+                onClick={(e) => { e.preventDefault(); handleMobileClick(href); }}
+                className="block px-4 py-4 text-lg font-bold text-slate-700 hover:text-indigo-950 hover:bg-indigo-50 rounded-2xl transition-all capitalize"
+              >
+                {href.replace('.html', '')}
+              </a>
+            ))}
             <div className="pt-6 px-4">
               <button className="w-full bg-indigo-950 text-white px-5 py-5 rounded-2xl font-black text-lg hover:bg-indigo-900 transition-colors shadow-xl shadow-indigo-950/20">
                 Donate Now

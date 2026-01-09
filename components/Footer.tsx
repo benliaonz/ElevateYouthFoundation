@@ -3,6 +3,12 @@ import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'luc
 import { FOUNDATION_NAME, OFFICE_ADDRESS } from '../constants';
 
 export default function Footer() {
+  const navigate = (href: string) => (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.history.pushState({}, '', href);
+    window.dispatchEvent(new CustomEvent('app-nav-change'));
+  };
+
   return (
     <footer className="bg-indigo-950 text-indigo-300 pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -29,9 +35,9 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold mb-8 tracking-[0.1em] uppercase text-xs">Governance</h3>
             <ul className="space-y-4 text-sm font-medium">
-              <li><a href="about.html" className="hover:text-indigo-400 transition-colors">Our Mission</a></li>
-              <li><a href="trustees.html" className="hover:text-indigo-400 transition-colors">Trustees</a></li>
-              <li><a href="impact.html" className="hover:text-indigo-400 transition-colors">Impact Report</a></li>
+              <li><a href="about.html" onClick={navigate('about.html')} className="hover:text-indigo-400 transition-colors">Our Mission</a></li>
+              <li><a href="trustees.html" onClick={navigate('trustees.html')} className="hover:text-indigo-400 transition-colors">Trustees</a></li>
+              <li><a href="impact.html" onClick={navigate('impact.html')} className="hover:text-indigo-400 transition-colors">Impact Report</a></li>
               <li><a href="#" className="hover:text-indigo-400 transition-colors">NZ Charities Register</a></li>
               <li><a href="#" className="hover:text-indigo-400 transition-colors">Transparency Policy</a></li>
             </ul>
@@ -41,10 +47,10 @@ export default function Footer() {
             <h3 className="text-white font-bold mb-8 tracking-[0.1em] uppercase text-xs">Support</h3>
             <ul className="space-y-4 text-sm font-medium">
               <li><a href="#" className="hover:text-indigo-400 transition-colors">Make a Donation</a></li>
-              <li><a href="contact.html" className="hover:text-indigo-400 transition-colors">Corporate Partners</a></li>
+              <li><a href="contact.html" onClick={navigate('contact.html')} className="hover:text-indigo-400 transition-colors">Corporate Partners</a></li>
               <li><a href="#" className="hover:text-indigo-400 transition-colors">Gift Matching</a></li>
-              <li><a href="contact.html" className="hover:text-indigo-400 transition-colors">Volunteer in Auckland</a></li>
-              <li><a href="programs.html" className="hover:text-indigo-400 transition-colors">Mentorship Program</a></li>
+              <li><a href="contact.html" onClick={navigate('contact.html')} className="hover:text-indigo-400 transition-colors">Volunteer in Auckland</a></li>
+              <li><a href="programs.html" onClick={navigate('programs.html')} className="hover:text-indigo-400 transition-colors">Mentorship Program</a></li>
             </ul>
           </div>
 
