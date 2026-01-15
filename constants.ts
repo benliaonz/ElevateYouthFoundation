@@ -9,7 +9,7 @@ export const FOUNDATION_EMAIL = "elevateyouthfoundationnz@gmail.com";
 export const FOUNDATION_PHONE = "0225999395";
 
 export const ABOUT_TEXT = {
-  history: "Established on October 21, 2025, by Settlor Bin Li, the Elevate Youth Foundation was created with a clear vision: to empower the youth of Aotearoa through structured mentorship and financial support.",
+  history: "Established in 2025, by Settlor Bin Li, the Elevate Youth Foundation was created with a clear vision: to empower the youth of Aotearoa through structured mentorship and financial support.",
   vision: "We believe that every young person, regardless of their financial circumstances, deserves the opportunity to reach their full potential in academics, sports, and the arts.",
   legal: "Operated as a registered charitable trust under the Charitable Trusts Act 1957 and the Trusts Act 2019, we maintain the highest standards of governance and transparency."
 };
@@ -20,7 +20,7 @@ export const PROGRAMS: Program[] = [
     title: 'Educational Advancement',
     description: 'We bridge the gap between potential and achievement by providing specialized mentoring, STEM workshops, and academic tutoring. Our programs are designed to foster critical thinking, digital literacy, and a lifelong love of learning.',
     icon: GraduationCap,
-    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800',
     testimonials: [
       {
         quote: "The robotics workshop changed my life. I never thought I could be an engineer until Elevate gave me the tools to try.",
@@ -34,7 +34,7 @@ export const PROGRAMS: Program[] = [
     title: 'Athletics & Arts',
     description: 'From buying rugby boots to funding cello lessons, we ensure financial barriers don\'t stop talent. We support young athletes and artists with equipment grants, travel funding for competitions, and exposure to professional networks.',
     icon: Trophy,
-    image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&q=80&w=800',
     testimonials: [
       {
         quote: "With the foundation's support, I was able to travel to the regional swimming championships. Their belief in me kept me going.",
@@ -48,7 +48,7 @@ export const PROGRAMS: Program[] = [
     title: 'Financial Assistance',
     description: 'We offer a range of scholarships and hardship grants for high-potential students facing economic adversity. This includes assistance with school fees, uniform costs, and tertiary education applications.',
     icon: BookOpen,
-    image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800',
     testimonials: [
       {
         quote: "Receiving this scholarship meant I could focus on my studies without the constant stress of school fees. I'm forever grateful.",
@@ -121,7 +121,7 @@ Key Legal & Structural Information:
 - Registered Office: ${OFFICE_ADDRESS}.
 - Governing Law: New Zealand Law.
 - Mission: ${MISSION_STATEMENT}.
-- History: Founded Oct 21, 2025.
+- History: Founded in 2025.
 - Programs: Educational Advancement, Athletics & Arts, Scholarships/Financial Aid, and Community Wellbeing.
 - Contact: ${FOUNDATION_EMAIL} | ${FOUNDATION_PHONE}
 - Transparency: 82% of funds go directly to programs.
