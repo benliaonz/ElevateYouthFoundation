@@ -50,17 +50,20 @@ export const TRUSTEES: Trustee[] = [
   {
     name: "Bin Li",
     role: "Settlor & Trustee",
-    bio: "Dedicated to creating opportunities for the next generation in Auckland and across New Zealand."
+    bio: "Visionary leader dedicated to creating sustainable pathways for youth leadership and academic growth across Auckland.",
+    image: "https://images.unsplash.com/photo-1540569014015-19a7be504e3a?auto=format&fit=crop&q=80&w=400&h=400"
   },
   {
     name: "Nan Li",
     role: "Trustee",
-    bio: "Focused on academic excellence and providing resources to bridge the educational gap."
+    bio: "Strategic advisor focused on educational equity and providing resources to bridge the gap for underprivileged students.",
+    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=400&h=400"
   },
   {
     name: "Kai Sheng",
     role: "Trustee",
-    bio: "Specializing in community engagement and fostering youth leadership development."
+    bio: "Expert in community development with a passion for fostering cultural connection and resilience in young New Zealanders.",
+    image: "https://images.unsplash.com/photo-1556157382-97dee2dcb748?auto=format&fit=crop&q=80&w=400&h=400"
   }
 ];
 

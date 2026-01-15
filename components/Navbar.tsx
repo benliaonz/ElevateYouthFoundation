@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { FOUNDATION_EMAIL } from '../constants';
@@ -14,8 +13,8 @@ const NavLink = ({ href, children }: NavLinkProps) => {
   useEffect(() => {
     const checkActive = () => {
       const currentPath = window.location.pathname;
-      const targetPath = '/' + href;
-      setIsActive(currentPath === targetPath || (currentPath === '/' && href === 'index'));
+      const targetPath = href === '/' ? '/' : `/${href.replace(/^\//, '')}`;
+      setIsActive(currentPath === targetPath || (currentPath === '/' && href === '/index'));
     };
     checkActive();
     window.addEventListener('popstate', checkActive);
@@ -27,11 +26,10 @@ const NavLink = ({ href, children }: NavLinkProps) => {
   }, [href]);
 
   const handleClick = (e: React.MouseEvent) => {
-    // If it's a mailto link, let it behave naturally
     if (href.startsWith('mailto:')) return;
-
     e.preventDefault();
-    window.history.pushState({}, '', href);
+    const cleanPath = href.startsWith('/') ? href : `/${href}`;
+    window.history.pushState({}, '', cleanPath);
     window.dispatchEvent(new CustomEvent('app-nav-change'));
   };
 
@@ -60,7 +58,8 @@ export default function Navbar() {
       window.location.href = href;
       return;
     }
-    window.history.pushState({}, '', href);
+    const cleanPath = href.startsWith('/') ? href : `/${href}`;
+    window.history.pushState({}, '', cleanPath);
     window.dispatchEvent(new CustomEvent('app-nav-change'));
   };
 
@@ -71,7 +70,7 @@ export default function Navbar() {
           <div className="flex items-center">
             <a 
               href="/" 
-              onClick={(e) => { e.preventDefault(); handleMobileClick('index'); }}
+              onClick={(e) => { e.preventDefault(); handleMobileClick('/'); }}
               className="flex items-center group"
             >
               <div className="flex flex-col">
@@ -82,11 +81,11 @@ export default function Navbar() {
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
-            <NavLink href="about">About</NavLink>
-            <NavLink href="programs">Programs</NavLink>
-            <NavLink href="trustees">Trustees</NavLink>
-            <NavLink href="impact">Impact</NavLink>
-            <NavLink href="contact">Contact</NavLink>
+            <NavLink href="/about">About</NavLink>
+            <NavLink href="/programs">Programs</NavLink>
+            <NavLink href="/trustees">Trustees</NavLink>
+            <NavLink href="/impact">Impact</NavLink>
+            <NavLink href="/contact">Contact</NavLink>
             <a 
               href={`mailto:${FOUNDATION_EMAIL}?subject=Donation Inquiry`}
               className="bg-indigo-950 text-white px-7 py-2.5 rounded-full font-bold hover:bg-indigo-800 transition-all shadow-lg shadow-indigo-950/10 active:scale-95 text-sm uppercase tracking-widest"
@@ -100,7 +99,7 @@ export default function Navbar() {
               onClick={() => setIsOpen(!isOpen)}
               className="text-indigo-950 hover:bg-indigo-50 p-2 rounded-xl transition-colors focus:outline-none"
             >
-              {isOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
@@ -108,22 +107,42 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden bg-white border-t border-indigo-50 animate-in fade-in slide-in-from-top-4 duration-300">
-          <div className="px-4 pt-4 pb-8 space-y-1">
-            {['about', 'programs', 'trustees', 'impact', 'contact'].map((path) => (
+        <div className="md:hidden bg-white border-t border-indigo-50 animate-in slide-in-from-top-5 duration-300">
+          <div className="px-4 pt-4 pb-8 space-y-2">
+            <button 
+              onClick={() => handleMobileClick('/about')}
+              className="block w-full text-left px-4 py-3 rounded-xl text-base font-bold text-indigo-950 hover:bg-indigo-50 transition-colors"
+            >
+              About
+            </button>
+            <button 
+              onClick={() => handleMobileClick('/programs')}
+              className="block w-full text-left px-4 py-3 rounded-xl text-base font-bold text-indigo-950 hover:bg-indigo-50 transition-colors"
+            >
+              Programs
+            </button>
+            <button 
+              onClick={() => handleMobileClick('/trustees')}
+              className="block w-full text-left px-4 py-3 rounded-xl text-base font-bold text-indigo-950 hover:bg-indigo-50 transition-colors"
+            >
+              Trustees
+            </button>
+            <button 
+              onClick={() => handleMobileClick('/impact')}
+              className="block w-full text-left px-4 py-3 rounded-xl text-base font-bold text-indigo-950 hover:bg-indigo-50 transition-colors"
+            >
+              Impact
+            </button>
+            <button 
+              onClick={() => handleMobileClick('/contact')}
+              className="block w-full text-left px-4 py-3 rounded-xl text-base font-bold text-indigo-950 hover:bg-indigo-50 transition-colors"
+            >
+              Contact
+            </button>
+            <div className="pt-4 px-4">
               <a 
-                key={path}
-                href={path} 
-                onClick={(e) => { e.preventDefault(); handleMobileClick(path); }}
-                className="block px-4 py-4 text-lg font-bold text-slate-700 hover:text-indigo-950 hover:bg-indigo-50 rounded-2xl transition-all capitalize"
-              >
-                {path}
-              </a>
-            ))}
-            <div className="pt-6 px-4">
-              <a 
-                href={`mailto:${FOUNDATION_EMAIL}`}
-                className="block text-center w-full bg-indigo-950 text-white px-5 py-5 rounded-2xl font-black text-lg hover:bg-indigo-900 transition-colors shadow-xl shadow-indigo-950/20"
+                href={`mailto:${FOUNDATION_EMAIL}?subject=Donation Inquiry`}
+                className="block w-full bg-indigo-950 text-white text-center px-6 py-4 rounded-2xl font-black uppercase tracking-widest shadow-lg active:scale-95 transition-all"
               >
                 Donate Now
               </a>

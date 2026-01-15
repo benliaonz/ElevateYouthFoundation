@@ -16,8 +16,9 @@ function App() {
 
   const updatePageFromPath = () => {
     const path = window.location.pathname;
-    // Handle both /about and /about.html
-    let page = path.split('/').pop() || 'index';
+    // Extract the primary route segment and strip extensions
+    let segments = path.split('/').filter(Boolean);
+    let page = segments[0] || 'index';
     page = page.replace('.html', '');
     
     if (page === 'index' || page === '') {
@@ -29,7 +30,9 @@ function App() {
   };
 
   useEffect(() => {
+    // Sync initial route
     updatePageFromPath();
+    // Listen for navigation events
     window.addEventListener('popstate', updatePageFromPath);
     window.addEventListener('app-nav-change', updatePageFromPath);
     return () => {
@@ -42,8 +45,8 @@ function App() {
     <div className="bg-indigo-950 pt-32 pb-20 relative overflow-hidden">
       <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] invert"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center md:text-left">
-        <h1 className="text-4xl md:text-6xl font-black text-white mb-4 tracking-tight">{title}</h1>
-        {subtitle && <p className="text-indigo-200 text-lg md:text-xl max-w-2xl opacity-80 font-medium mx-auto md:mx-0">{subtitle}</p>}
+        <h1 className="text-4xl md:text-6xl font-black text-white mb-4 tracking-tight text-balance">{title}</h1>
+        {subtitle && <p className="text-indigo-200 text-lg md:text-xl max-w-2xl opacity-80 font-medium mx-auto md:mx-0 leading-relaxed">{subtitle}</p>}
       </div>
     </div>
   );
@@ -101,7 +104,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white selection:bg-indigo-100 selection:text-indigo-900">
+    <div className="min-h-screen bg-white selection:bg-indigo-100 selection:text-indigo-900 overflow-x-hidden">
       <Navbar />
       <main>
         {renderContent()}
@@ -115,16 +118,16 @@ function App() {
               </p>
               <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
                 <a 
-                  href={`mailto:${FOUNDATION_EMAIL}`}
+                  href={`mailto:${FOUNDATION_EMAIL}?subject=Donation Inquiry`}
                   className="bg-indigo-600 text-white px-12 py-4 rounded-full font-black text-lg hover:bg-indigo-500 transition-all shadow-xl shadow-indigo-600/20 active:scale-95"
                 >
                   Donate Now
                 </a>
                 <a 
                   href={`mailto:${FOUNDATION_EMAIL}?subject=Volunteering Inquiry`}
-                  className="text-indigo-950 font-bold hover:text-indigo-600 transition-colors flex items-center"
+                  className="text-indigo-950 font-bold hover:text-indigo-600 transition-colors flex items-center group"
                 >
-                  Inquire about volunteering <span className="ml-2">&rarr;</span>
+                  Inquire about volunteering <span className="ml-2 transition-transform group-hover:translate-x-1">&rarr;</span>
                 </a>
               </div>
             </div>
