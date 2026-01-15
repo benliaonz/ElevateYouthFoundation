@@ -84,13 +84,13 @@ export const TRUSTEES: Trustee[] = [
     name: "Nan (Andrea) Li",
     role: "Trustee",
     bio: "Since moving to Auckland in 2002, Andrea Li has been deeply committed to the growth and success of the local community. As a mother of two teenagers, she has a front-row seat to the challenges and opportunities facing New Zealand’s youth today, fueling her passion for the Elevate Youth Foundation.\n\nAndrea believes that \"excellence\" isn't a one-size-fits-all concept. Whether a young person is striving for a podium finish in sports, expressing themselves through the arts, or pushing for academic success, she is dedicated to ensuring they have the support systems necessary to flourish.\n\nHeart for the Community: With a background in Psychology and Education, Andrea approaches her role as Trustee with a focus on holistic development. She draws on her previous experience in the non-profit sector to help the Foundation create meaningful, lasting impacts for rangatahi across the region. Her philosophy is simple: when we invest in the diverse talents of our youth, we build a stronger future for everyone. Andrea is proud to contribute her time and energy to helping the next generation of New Zealanders excel in every aspect of their lives.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400&h=400"
+    image: "./nan-li.jpg"
   },
   {
     name: "Kai (Leon) Sheng",
     role: "Trustee",
     bio: "Leon Sheng joined the board with a mission to foster resilience and innovation among New Zealand’s youth. A graduate in Electrical Control Engineering with over a decade of experience as a business owner, Leon moved to New Zealand in 2001, bringing a fresh, global perspective to the Foundation’s mission.\n\nIn his role as Trustee, Leon focuses on enhancing the Foundation’s outreach to diverse communities and streamlining the selection process for our youth leadership grants. He applies his engineering-driven logic to improve the Foundation’s operational efficiency, ensuring that resources are effectively channeled to those who need them most. Leon is passionate about creating inclusive pathways that allow young people from all backgrounds to access high-quality education and professional development.",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=400&h=400"
+    image: "./kai-sheng.jpg"
   }
 ];
 

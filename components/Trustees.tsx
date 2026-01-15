@@ -19,11 +19,16 @@ export default function Trustees() {
           {TRUSTEES.map((trustee, index) => (
             <div key={index} className="group bg-white rounded-[40px] shadow-sm border border-indigo-50 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 flex flex-col items-center p-8 text-center">
               <div className="relative mb-8">
-                <div className="w-40 h-40 rounded-full overflow-hidden ring-4 ring-indigo-50 group-hover:ring-indigo-100 transition-all duration-500">
+                <div className="w-40 h-40 rounded-full overflow-hidden ring-4 ring-indigo-50 group-hover:ring-indigo-100 transition-all duration-500 bg-indigo-50">
                   <img 
                     src={trustee.image} 
                     alt={trustee.name} 
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                    onError={(e) => {
+                      // Fallback to a high-quality placeholder if the custom image isn't found
+                      e.currentTarget.src = "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=400&h=400";
+                      e.currentTarget.onerror = null; // Prevent infinite loop
+                    }}
                   />
                 </div>
                 <div className="absolute bottom-1 right-1 bg-indigo-600 text-white p-2 rounded-full shadow-lg border-2 border-white">
