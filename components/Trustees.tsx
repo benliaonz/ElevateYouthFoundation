@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { TRUSTEES } from '../constants.ts';
 import { ShieldCheck, Scale, GraduationCap } from 'lucide-react';
@@ -16,7 +15,7 @@ export default function Trustees() {
           <div className="w-24 h-1 bg-indigo-600 mx-auto mt-8 rounded-full"></div>
         </div>
 
-        <div className="grid gap-10 md:grid-cols-3">
+        <div className="grid gap-10 lg:grid-cols-3">
           {TRUSTEES.map((trustee, index) => (
             <div key={index} className="group bg-white rounded-[40px] shadow-sm border border-indigo-50 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 flex flex-col items-center p-8 text-center">
               <div className="relative mb-8">
@@ -32,10 +31,10 @@ export default function Trustees() {
                 </div>
               </div>
               
-              <div className="flex-1">
+              <div className="flex-1 w-full">
                 <h3 className="text-2xl font-black text-indigo-950 mb-1">{trustee.name}</h3>
                 <p className="text-indigo-600 font-bold text-xs uppercase tracking-widest mb-6">{trustee.role}</p>
-                <p className="text-slate-500 text-sm leading-relaxed px-4">
+                <p className="text-slate-600 text-sm leading-relaxed text-left whitespace-pre-wrap">
                   {trustee.bio}
                 </p>
               </div>

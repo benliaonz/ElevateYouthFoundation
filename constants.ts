@@ -47,22 +47,22 @@ export const PROGRAMS: Program[] = [
 
 export const TRUSTEES: Trustee[] = [
   {
-    name: "Bin Li",
-    role: "Settlor & Trustee",
-    bio: "Visionary leader dedicated to creating sustainable pathways for youth leadership and academic growth across Auckland.",
+    name: "Bin (Matthew) Li",
+    role: "Chairperson",
+    bio: "Mr. Matthew Li settled in New Zealand in 2017. As a member of the migrant community, he actively engaged in local community learning and integration upon his arrival, and obtained a Postgraduate Diploma in Computing. The systematic training he received in the field of computer science has endowed him with rigorous logical thinking and efficient processing capabilities, enabling him to demonstrate a rational and unique perspective when participating in community affairs management and decision-making.\n\nSocial Responsibility and Charity Practice: Upholding the original intention of \"giving back to society,\" Matthew has been deeply involved in charitable organizations for many years. Through long-term frontline work, he has accumulated rich experience in cross-cultural services and possesses a deep understanding of the real challenges faced by new immigrants in language communication, cultural adaptation, and career transition. His low-profile and pragmatic work style, along with his long-term dedication to public welfare, have earned him extensive recognition and trust from community peers.",
     image: "https://images.unsplash.com/photo-1548372290-8d01b6c8e78c?auto=format&fit=crop&q=80&w=400&h=400"
   },
   {
-    name: "Nan Li",
+    name: "Nan (Andrea) Li",
     role: "Trustee",
-    bio: "Strategic advisor focused on educational equity and providing resources to bridge the gap for underprivileged students.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400&h=400"
+    bio: "Since moving to Auckland in 2002, Andrea Li has been deeply committed to the growth and success of the local community. As a mother of two teenagers, she has a front-row seat to the challenges and opportunities facing New Zealand’s youth today, fueling her passion for the Elevate Youth Foundation.\n\nAndrea believes that \"excellence\" isn't a one-size-fits-all concept. Whether a young person is striving for a podium finish in sports, expressing themselves through the arts, or pushing for academic success, she is dedicated to ensuring they have the support systems necessary to flourish.\n\nHeart for the Community: With a background in Psychology and Education, Andrea approaches her role as Trustee with a focus on holistic development. She draws on her previous experience in the non-profit sector to help the Foundation create meaningful, lasting impacts for rangatahi across the region. Her philosophy is simple: when we invest in the diverse talents of our youth, we build a stronger future for everyone. Andrea is proud to contribute her time and energy to helping the next generation of New Zealanders excel in every aspect of their lives.",
+    image: "https://images.unsplash.com/photo-1567532939604-b6c5b0adcc80?auto=format&fit=crop&q=80&w=400&h=400"
   },
   {
-    name: "Kai Sheng",
+    name: "Kai (Leon) Sheng",
     role: "Trustee",
-    bio: "Expert in community development with a passion for fostering cultural connection and resilience in young New Zealanders.",
-    image: "https://images.unsplash.com/photo-1556157382-97dee2dcb748?auto=format&fit=crop&q=80&w=400&h=400"
+    bio: "Leon Sheng joined the board with a mission to foster resilience and innovation among New Zealand’s youth. A graduate in Electrical Control Engineering with over a decade of experience as a business owner, Leon moved to New Zealand in 2001, bringing a fresh, global perspective to the Foundation’s mission.\n\nIn his role as Trustee, Leon focuses on enhancing the Foundation’s outreach to diverse communities and streamlining the selection process for our youth leadership grants. He applies his engineering-driven logic to improve the Foundation’s operational efficiency, ensuring that resources are effectively channeled to those who need them most. Leon is passionate about creating inclusive pathways that allow young people from all backgrounds to access high-quality education and professional development.",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400&h=400"
   }
 ];
 
@@ -83,13 +83,17 @@ export const SYSTEM_INSTRUCTION = `
 You are the AI Assistant for the Elevate Youth Foundation.
 Your tone should be inspiring, professional, warm, and helpful.
 
-Key Legal & Structural Information (from Trust Deed):
+Key Leadership:
+- Chairperson: Bin (Matthew) Li
+- Trustee: Nan (Andrea) Li
+- Trustee: Kai (Leon) Sheng
+
+Key Legal & Structural Information:
 - Legal Status: Registered Charitable Trust in New Zealand (Charitable Trusts Act 1957).
 - Registered Office: ${OFFICE_ADDRESS}.
 - Governing Law: New Zealand Law.
 - Mission: ${MISSION_STATEMENT}.
-- History: Founded Oct 21, 2025, by Settlor Bin Li.
-- Trustees: Bin Li, Nan Li, Kai Sheng.
+- History: Founded Oct 21, 2025.
 - Programs: Educational Advancement, Athletics & Arts, Scholarships/Financial Aid, and Community Wellbeing.
 - Contact: ${FOUNDATION_EMAIL} | ${FOUNDATION_PHONE}
 - Transparency: 82% of funds go directly to programs.
