@@ -15,14 +15,23 @@ function App() {
 
   const updatePageFromPath = () => {
     const path = window.location.pathname;
-    let segments = path.split('/').filter(Boolean);
-    let page = segments[0] || 'index';
-    page = page.replace('.html', '');
+    const segments = path.split('/').filter(Boolean);
+    const lastSegment = segments.length > 0 ? segments[segments.length - 1] : 'index';
     
-    if (page === 'index' || page === '') {
+    // Normalize page name by removing extension
+    const pageName = lastSegment.replace('.html', '');
+    
+    // Whitelist of valid pages to prevent 404s or invalid states
+    const validPages = ['about', 'programs', 'trustees', 'impact', 'contact'];
+    
+    if (validPages.includes(pageName)) {
+      setCurrentPage(pageName);
+    } else if (pageName === 'index' || pageName === '') {
       setCurrentPage('index');
     } else {
-      setCurrentPage(page);
+      // Fallback: check if any segment matches a known page (useful for subfolder deployments)
+      const found = validPages.find(p => segments.includes(p) || segments.includes(`${p}.html`));
+      setCurrentPage(found || 'index');
     }
     window.scrollTo(0, 0);
   };
