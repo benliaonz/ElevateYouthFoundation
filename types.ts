@@ -1,11 +1,18 @@
 import React from 'react';
 
+export interface Testimonial {
+  quote: string;
+  author: string;
+  role?: string;
+}
+
 export interface Program {
   id: string;
   title: string;
   description: string;
   icon: React.ComponentType<any>;
   image: string;
+  testimonials?: Testimonial[];
 }
 
 export interface Stat {

@@ -21,6 +21,13 @@ export const PROGRAMS: Program[] = [
     description: 'Providing mentoring, training, and workshops that promote creativity, confidence, and resilience in young minds.',
     icon: GraduationCap,
     image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800',
+    testimonials: [
+      {
+        quote: "The robotics workshop changed my life. I never thought I could be an engineer until Elevate gave me the tools to try.",
+        author: "Sarah T.",
+        role: "Year 12 Student"
+      }
+    ]
   },
   {
     id: 'sports-arts',
@@ -28,6 +35,13 @@ export const PROGRAMS: Program[] = [
     description: 'Encouraging excellence in sports and arts through dedicated support programs and talent identification initiatives.',
     icon: Trophy,
     image: 'https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&q=80&w=800',
+    testimonials: [
+      {
+        quote: "With the foundation's support, I was able to travel to the regional swimming championships. Their belief in me kept me going.",
+        author: "James M.",
+        role: "Athlete"
+      }
+    ]
   },
   {
     id: 'scholarships',
@@ -35,6 +49,13 @@ export const PROGRAMS: Program[] = [
     description: 'Offering scholarships, grants, and awards to youth with potential, regardless of their personal or financial circumstances.',
     icon: BookOpen,
     image: 'https://images.unsplash.com/photo-1544650030-3c51ad3571d2?auto=format&fit=crop&q=80&w=800',
+    testimonials: [
+      {
+        quote: "Receiving this scholarship meant I could focus on my studies without the constant stress of school fees. I'm forever grateful.",
+        author: "Aria W.",
+        role: "University Applicant"
+      }
+    ]
   },
   {
     id: 'wellbeing',
@@ -42,6 +63,13 @@ export const PROGRAMS: Program[] = [
     description: 'Promoting engagement through volunteering and service initiatives that encourage social responsibility and connection.',
     icon: HeartHandshake,
     image: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&q=80&w=800',
+    testimonials: [
+      {
+        quote: "Volunteering with Elevate taught me more about leadership than any textbook ever could. I feel truly connected to my community now.",
+        author: "David L.",
+        role: "Volunteer Lead"
+      }
+    ]
   },
 ];
 
