@@ -1,6 +1,5 @@
-
 import { BookOpen, Trophy, HeartHandshake, Users, Palette, GraduationCap } from 'lucide-react';
-import { Program, Stat, FinancialData, Trustee } from './types';
+import { Program, Stat, FinancialData, Trustee } from './types.ts';
 
 export const FOUNDATION_NAME = "Elevate Youth Foundation";
 export const MISSION_STATEMENT = "To identify, support, and encourage young people who demonstrate potential in academics, sports, arts, and community service.";
@@ -51,13 +50,13 @@ export const TRUSTEES: Trustee[] = [
     name: "Bin Li",
     role: "Settlor & Trustee",
     bio: "Visionary leader dedicated to creating sustainable pathways for youth leadership and academic growth across Auckland.",
-    image: "https://images.unsplash.com/photo-1540569014015-19a7be504e3a?auto=format&fit=crop&q=80&w=400&h=400"
+    image: "https://images.unsplash.com/photo-1548372290-8d01b6c8e78c?auto=format&fit=crop&q=80&w=400&h=400"
   },
   {
     name: "Nan Li",
     role: "Trustee",
     bio: "Strategic advisor focused on educational equity and providing resources to bridge the gap for underprivileged students.",
-    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=400&h=400"
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400&h=400"
   },
   {
     name: "Kai Sheng",

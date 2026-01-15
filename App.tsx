@@ -1,22 +1,20 @@
-
 import React, { useEffect, useState } from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import AboutSection from './components/AboutSection';
-import Programs from './components/Programs';
-import Trustees from './components/Trustees';
-import Impact from './components/Impact';
-import Contact from './components/Contact';
-import ChatWidget from './components/ChatWidget';
-import Footer from './components/Footer';
-import { FOUNDATION_EMAIL } from './constants';
+import Navbar from './components/Navbar.tsx';
+import Hero from './components/Hero.tsx';
+import AboutSection from './components/AboutSection.tsx';
+import Programs from './components/Programs.tsx';
+import Trustees from './components/Trustees.tsx';
+import Impact from './components/Impact.tsx';
+import Contact from './components/Contact.tsx';
+import ChatWidget from './components/ChatWidget.tsx';
+import Footer from './components/Footer.tsx';
+import { FOUNDATION_EMAIL } from './constants.ts';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('index');
 
   const updatePageFromPath = () => {
     const path = window.location.pathname;
-    // Extract the primary route segment and strip extensions
     let segments = path.split('/').filter(Boolean);
     let page = segments[0] || 'index';
     page = page.replace('.html', '');
@@ -30,9 +28,7 @@ function App() {
   };
 
   useEffect(() => {
-    // Sync initial route
     updatePageFromPath();
-    // Listen for navigation events
     window.addEventListener('popstate', updatePageFromPath);
     window.addEventListener('app-nav-change', updatePageFromPath);
     return () => {
