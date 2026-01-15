@@ -18,9 +18,9 @@ export const PROGRAMS: Program[] = [
   {
     id: 'edu-adv',
     title: 'Educational Advancement',
-    description: 'Providing mentoring, training, and workshops that promote creativity, confidence, and resilience in young minds.',
+    description: 'We bridge the gap between potential and achievement by providing specialized mentoring, STEM workshops, and academic tutoring. Our programs are designed to foster critical thinking, digital literacy, and a lifelong love of learning.',
     icon: GraduationCap,
-    image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800',
     testimonials: [
       {
         quote: "The robotics workshop changed my life. I never thought I could be an engineer until Elevate gave me the tools to try.",
@@ -32,23 +32,23 @@ export const PROGRAMS: Program[] = [
   {
     id: 'sports-arts',
     title: 'Athletics & Arts',
-    description: 'Encouraging excellence in sports and arts through dedicated support programs and talent identification initiatives.',
+    description: 'From buying rugby boots to funding cello lessons, we ensure financial barriers don\'t stop talent. We support young athletes and artists with equipment grants, travel funding for competitions, and exposure to professional networks.',
     icon: Trophy,
-    image: 'https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&q=80&w=800',
     testimonials: [
       {
         quote: "With the foundation's support, I was able to travel to the regional swimming championships. Their belief in me kept me going.",
         author: "James M.",
-        role: "Athlete"
+        role: "Regional Athlete"
       }
     ]
   },
   {
     id: 'scholarships',
     title: 'Financial Assistance',
-    description: 'Offering scholarships, grants, and awards to youth with potential, regardless of their personal or financial circumstances.',
+    description: 'We offer a range of scholarships and hardship grants for high-potential students facing economic adversity. This includes assistance with school fees, uniform costs, and tertiary education applications.',
     icon: BookOpen,
-    image: 'https://images.unsplash.com/photo-1544650030-3c51ad3571d2?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800',
     testimonials: [
       {
         quote: "Receiving this scholarship meant I could focus on my studies without the constant stress of school fees. I'm forever grateful.",
@@ -60,7 +60,7 @@ export const PROGRAMS: Program[] = [
   {
     id: 'wellbeing',
     title: 'Community Wellbeing',
-    description: 'Promoting engagement through volunteering and service initiatives that encourage social responsibility and connection.',
+    description: 'Building future leaders through service. We organize youth-led volunteering initiatives, environmental clean-ups, and community outreach projects that teach responsibility, empathy, and civic duty.',
     icon: HeartHandshake,
     image: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&q=80&w=800',
     testimonials: [
@@ -78,7 +78,7 @@ export const TRUSTEES: Trustee[] = [
     name: "Bin (Matthew) Li",
     role: "Chairperson",
     bio: "Mr. Matthew Li settled in New Zealand in 2017. As a member of the migrant community, he actively engaged in local community learning and integration upon his arrival, and obtained a Postgraduate Diploma in Computing. The systematic training he received in the field of computer science has endowed him with rigorous logical thinking and efficient processing capabilities, enabling him to demonstrate a rational and unique perspective when participating in community affairs management and decision-making.\n\nSocial Responsibility and Charity Practice: Upholding the original intention of \"giving back to society,\" Matthew has been deeply involved in charitable organizations for many years. Through long-term frontline work, he has accumulated rich experience in cross-cultural services and possesses a deep understanding of the real challenges faced by new immigrants in language communication, cultural adaptation, and career transition. His low-profile and pragmatic work style, along with his long-term dedication to public welfare, have earned him extensive recognition and trust from community peers.",
-    image: "https://images.unsplash.com/photo-1548372290-8d01b6c8e78c?auto=format&fit=crop&q=80&w=400&h=400"
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400&h=400"
   },
   {
     name: "Nan (Andrea) Li",

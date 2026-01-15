@@ -46,6 +46,30 @@ function App() {
     };
   }, []);
 
+  // Update Document Title based on current page
+  useEffect(() => {
+    const baseTitle = "Elevate Youth Foundation";
+    switch (currentPage) {
+      case 'about':
+        document.title = `About Us | ${baseTitle}`;
+        break;
+      case 'programs':
+        document.title = `Our Programs | ${baseTitle}`;
+        break;
+      case 'trustees':
+        document.title = `Board of Trustees | ${baseTitle}`;
+        break;
+      case 'impact':
+        document.title = `Impact & Transparency | ${baseTitle}`;
+        break;
+      case 'contact':
+        document.title = `Contact Us | ${baseTitle}`;
+        break;
+      default:
+        document.title = baseTitle;
+    }
+  }, [currentPage]);
+
   const SubPageHeader = ({ title, subtitle }: { title: string; subtitle?: string }) => (
     <div className="bg-indigo-950 pt-32 pb-20 relative overflow-hidden">
       <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] invert"></div>
