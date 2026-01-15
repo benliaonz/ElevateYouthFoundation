@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Mail, MapPin, Phone, Send } from 'lucide-react';
-import { OFFICE_ADDRESS, FOUNDATION_EMAIL, FOUNDATION_PHONE } from '../constants';
+import { OFFICE_ADDRESS, FOUNDATION_EMAIL, FOUNDATION_PHONE } from '../constants.ts';
 
 export default function Contact() {
   return (

@@ -1,8 +1,9 @@
+
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send, Sparkles } from 'lucide-react';
 import { GoogleGenAI } from "@google/genai";
-import { SYSTEM_INSTRUCTION } from '../constants';
-import { ChatMessage } from '../types';
+import { SYSTEM_INSTRUCTION } from '../constants.ts';
+import { ChatMessage } from '../types.ts';
 
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);

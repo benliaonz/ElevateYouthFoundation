@@ -1,6 +1,7 @@
+
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { FOUNDATION_EMAIL } from '../constants';
+import { FOUNDATION_EMAIL } from '../constants.ts';
 
 interface NavLinkProps {
   href: string;

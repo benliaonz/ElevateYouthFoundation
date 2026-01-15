@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
-import { FOUNDATION_NAME, OFFICE_ADDRESS, FOUNDATION_EMAIL, FOUNDATION_PHONE } from '../constants';
+import { FOUNDATION_NAME, OFFICE_ADDRESS, FOUNDATION_EMAIL, FOUNDATION_PHONE } from '../constants.ts';
 
 export default function Footer() {
   const navigate = (href: string) => (e: React.MouseEvent) => {

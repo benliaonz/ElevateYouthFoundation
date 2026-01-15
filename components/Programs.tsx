@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { PROGRAMS, FOUNDATION_EMAIL } from '../constants';
+import { PROGRAMS, FOUNDATION_EMAIL } from '../constants.ts';
 import { ArrowRight } from 'lucide-react';
 
 export default function Programs() {

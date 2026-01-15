@@ -1,5 +1,5 @@
 import React from 'react';
-import { STATS, FINANCIAL_DATA } from '../constants';
+import { STATS, FINANCIAL_DATA } from '../constants.ts';
 
 export default function Impact() {
   let cumulativePercent = 0;

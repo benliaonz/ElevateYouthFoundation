@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { MISSION_STATEMENT, FOUNDATION_EMAIL } from '../constants';
+import { MISSION_STATEMENT, FOUNDATION_EMAIL } from '../constants.ts';
 
 export default function Hero() {
   return (

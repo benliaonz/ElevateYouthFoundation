@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { TRUSTEES } from '../constants';
+import { TRUSTEES } from '../constants.ts';
 import { ShieldCheck, Scale, GraduationCap } from 'lucide-react';
 
 export default function Trustees() {

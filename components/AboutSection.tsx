@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { ABOUT_TEXT } from '../constants';
+import { ABOUT_TEXT } from '../constants.ts';
 import { ShieldCheck, History, Target } from 'lucide-react';
 
 export default function AboutSection() {
