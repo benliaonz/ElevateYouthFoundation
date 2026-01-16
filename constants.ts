@@ -75,22 +75,22 @@ const formatDriveUrl = (url: string) => {
 
 export const TRUSTEES: Trustee[] = [
   {
-    name: "Dr. Aroha Smith",
+    name: "[Trustee Name]",
     role: "Chairperson",
-    bio: "Aroha has over 20 years of experience in the education sector and is passionate about equitable access to learning for all Kiwi youth.",
-    // You can paste your Google Drive link below, the formatDriveUrl function will fix it automatically
+    bio: "[Enter Bio Here]",
+    // PASTE YOUR GOOGLE DRIVE LINK BELOW inside formatDriveUrl("...")
     image: formatDriveUrl("https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400") 
   },
   {
-    name: "John Doe",
+    name: "[Trustee Name]",
     role: "Treasurer",
-    bio: "John brings a wealth of financial expertise from the corporate banking world to ensure our foundation's long-term sustainability.",
+    bio: "[Enter Bio Here]",
     image: formatDriveUrl("https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400")
   },
   {
-    name: "Jane Wilson",
+    name: "[Trustee Name]",
     role: "Secretary",
-    bio: "Jane is a community organizer with a deep network in the non-profit sector in Auckland, dedicated to connecting resources with needs.",
+    bio: "[Enter Bio Here]",
     image: formatDriveUrl("https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400")
   }
 ];
