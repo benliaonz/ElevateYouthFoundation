@@ -75,23 +75,25 @@ const formatDriveUrl = (url: string) => {
 
 export const TRUSTEES: Trustee[] = [
   {
-    name: "[Trustee Name]",
+    name: "Bin (Matthew) Li",
     role: "Chairperson",
-    bio: "[Enter Bio Here]",
-    // PASTE YOUR GOOGLE DRIVE LINK BELOW inside formatDriveUrl("...")
-    image: formatDriveUrl("https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400") 
+    bio: "Mr. Matthew Li settled in New Zealand in 2017. As a member of the migrant community, he actively engaged in local community learning and integration upon his arrival, and obtained a Postgraduate Diploma in Computing. The systematic training he received in the field of computer science has endowed him with rigorous logical thinking and efficient processing capabilities, enabling him to demonstrate a rational and unique perspective when participating in community affairs management and decision-making. Upholding the original intention of \"giving back to society,\" Matthew has been deeply involved in charitable organizations for many years. Through long-term frontline work, he has accumulated rich experience in cross-cultural services and possesses a deep understanding of the real challenges faced by new immigrants in language communication, cultural adaptation, and career transition.",
+    // REPLACE THE URL BELOW with your Google Drive Link
+    image: formatDriveUrl("https://drive.google.com/file/d/1OlCqjW-QE5fqVyzMvdoRE5Bb9nN_FM1S/view?usp=drive_link")
   },
   {
-    name: "[Trustee Name]",
-    role: "Treasurer",
-    bio: "[Enter Bio Here]",
-    image: formatDriveUrl("https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400")
+    name: "Kai (Leon) Sheng",
+    role: "Trustee",
+    bio: "Leon Sheng joined the board with a mission to foster resilience and innovation among New Zealand’s youth. A graduate in Electrical Control Engineering with over a decade of experience as a business owner, Leon moved to New Zealand in 2001, bringing a fresh, global perspective to the Foundation’s mission. In his role as Trustee, Leon focuses on enhancing the Foundation’s outreach to diverse communities and streamlining the selection process for our youth leadership grants. He applies his engineering-driven logic to improve the Foundation’s operational efficiency, ensuring that resources are effectively channeled to those who need them most. Leon is passionate about creating inclusive pathways that allow young people from all backgrounds to access high-quality education and professional development.",
+    // REPLACE THE URL BELOW with your Google Drive Link
+    image: formatDriveUrl("https://drive.google.com/file/d/1tRbyDoTyoyTnKwwhgEW0-WdjcdLd31jv/view?usp=drive_link") 
   },
   {
-    name: "[Trustee Name]",
-    role: "Secretary",
-    bio: "[Enter Bio Here]",
-    image: formatDriveUrl("https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400")
+    name: "Nan (Andrea) Li",
+    role: "Trustee",
+    bio: "Since moving to Auckland in 2002, Andrea Li has been deeply committed to the growth and success of the local community. As a mother of two teenagers, she has a front-row seat to the challenges and opportunities facing New Zealand’s youth today, fueling her passion for the Elevate Youth Foundation. Andrea believes that \"excellence\" isn't a one-size-fits-all concept. Whether a young person is striving for a podium finish in sports, expressing themselves through the arts, or pushing for academic success, she is dedicated to ensuring they have the support systems necessary to flourish. With a background in Psychology and Education, Andrea approaches her role as Trustee with a focus on holistic development. She draws on her previous experience in the non-profit sector to help the Foundation create meaningful, lasting impacts for rangatahi across the region.",
+    // REPLACE THE URL BELOW with your Google Drive Link
+    image: formatDriveUrl("https://drive.google.com/file/d/18tQlCFzfPqn0e0ItF3OLzbc4LQ1BD0D7/view?usp=drive_link")
   }
 ];
 
