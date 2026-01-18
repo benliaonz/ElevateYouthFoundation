@@ -34,7 +34,7 @@ export const PROGRAMS: Program[] = [
     title: 'Academic Excellence',
     description: 'Scholarships, tutoring, and educational resources for high-potential students facing financial barriers.',
     icon: BookOpen,
-    image: formatDriveUrl('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800'),
+    image: formatDriveUrl('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800'),
     testimonials: [{ quote: "The scholarship allowed me to focus on my studies without worrying about fees.", author: "Sarah T.", role: "Scholarship Recipient" }]
   },
   {
@@ -42,22 +42,22 @@ export const PROGRAMS: Program[] = [
     title: 'Sports Development',
     description: 'Providing equipment, coaching, and travel grants for aspiring young athletes to compete at higher levels.',
     icon: Trophy,
-    image: formatDriveUrl('https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&q=80&w=800'),
+    image: formatDriveUrl('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&q=80&w=800'),
     testimonials: [{ quote: "I made the representative team thanks to the new gear and coaching support.", author: "Mikaere W.", role: "Athlete" }]
   },
   {
     id: 'arts',
-    title: 'Creative Arts',
-    description: 'Funding for instruments, art supplies, and exhibition opportunities for young creatives.',
+    title: 'Arts',
+    description: 'Funding for musical, creative arts, performance arts and exhibition opportunities for young creatives.',
     icon: Palette,
-    image: formatDriveUrl('https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&q=80&w=800')
+    image: formatDriveUrl('https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&q=80&w=800')
   },
   {
     id: 'community',
     title: 'Community Leadership',
     description: 'Mentorship programs connecting youth with local community leaders to foster civic engagement.',
     icon: Users,
-    image: formatDriveUrl('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80&w=800')
+    image: formatDriveUrl('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800')
   }
 ];
 
