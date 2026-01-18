@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Instagram, MessageCircle, Mail, Phone, MapPin } from 'lucide-react';
 import { FOUNDATION_NAME, OFFICE_ADDRESS, FOUNDATION_EMAIL, FOUNDATION_PHONE } from '../constants.ts';
 
 export default function Footer() {
@@ -25,10 +25,34 @@ export default function Footer() {
               Changing lives by providing the mentorship, resources, and community that every young person needs to thrive in a modern world.
             </p>
             <div className="flex space-x-5">
-              <a href="#" className="w-10 h-10 rounded-full border border-indigo-800 flex items-center justify-center hover:bg-white hover:text-indigo-950 transition-all"><Facebook size={18} /></a>
-              <a href="#" className="w-10 h-10 rounded-full border border-indigo-800 flex items-center justify-center hover:bg-white hover:text-indigo-950 transition-all"><Twitter size={18} /></a>
-              <a href="#" className="w-10 h-10 rounded-full border border-indigo-800 flex items-center justify-center hover:bg-white hover:text-indigo-950 transition-all"><Instagram size={18} /></a>
-              <a href="#" className="w-10 h-10 rounded-full border border-indigo-800 flex items-center justify-center hover:bg-white hover:text-indigo-950 transition-all"><Linkedin size={18} /></a>
+              <a 
+                href="https://www.facebook.com/share/1AUTEoZoG5/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border border-indigo-800 flex items-center justify-center hover:bg-white hover:text-indigo-950 transition-all"
+                aria-label="Facebook"
+              >
+                <Facebook size={18} />
+              </a>
+              <a 
+                href="https://www.instagram.com/elevate_youth_foundation" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border border-indigo-800 flex items-center justify-center hover:bg-white hover:text-indigo-950 transition-all"
+                aria-label="Instagram"
+              >
+                <Instagram size={18} />
+              </a>
+              <a 
+                href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzYzODYyOTg5NQ==&scene=124#wechat_redirect" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border border-indigo-800 flex items-center justify-center hover:bg-white hover:text-indigo-950 transition-all"
+                aria-label="WeChat Official Account"
+                title="WeChat Official Account"
+              >
+                <MessageCircle size={18} />
+              </a>
             </div>
           </div>
 
