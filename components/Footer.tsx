@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Instagram, MessageCircle, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Instagram, Mail, Phone, MapPin } from 'lucide-react';
 import { FOUNDATION_NAME, OFFICE_ADDRESS, FOUNDATION_EMAIL, FOUNDATION_PHONE } from '../constants.ts';
 
 export default function Footer() {
@@ -42,16 +42,6 @@ export default function Footer() {
                 aria-label="Instagram"
               >
                 <Instagram size={18} />
-              </a>
-              <a 
-                href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzYzODYyOTg5NQ==&scene=124#wechat_redirect" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full border border-indigo-800 flex items-center justify-center hover:bg-white hover:text-indigo-950 transition-all"
-                aria-label="WeChat Official Account"
-                title="WeChat Official Account"
-              >
-                <MessageCircle size={18} />
               </a>
             </div>
           </div>
