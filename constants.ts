@@ -62,15 +62,15 @@ export const PROGRAMS: Program[] = [
 ];
 
 export const STATS: Stat[] = [
-  { id: '1', label: 'Youth Supported', value: '150', suffix: '+' },
-  { id: '2', label: 'Scholarships', value: '45', prefix: '' },
-  { id: '3', label: 'Mentors Active', value: '20', suffix: '+' },
-  { id: '4', label: 'Success Rate', value: '95', suffix: '%' }
+  { id: '1', label: 'Youth Supported', value: '30', suffix: '+' },
+  { id: '2', label: 'Scholarships', value: '0', prefix: '' },
+  { id: '3', label: 'Mentors Active', value: '5', suffix: '+' },
+  { id: '4', label: 'Success Rate', value: '85', suffix: '%' }
 ];
 
 export const FINANCIAL_DATA: FinancialData[] = [
-  { name: 'Program Services', value: 82, color: '#4f46e5' }, // indigo-600
-  { name: 'Fundraising', value: 10, color: '#818cf8' }, // indigo-400
+  { name: 'Program Services', value: 32, color: '#4f46e5' }, // indigo-600
+  { name: 'Fundraising', value: 60, color: '#818cf8' }, // indigo-400
   { name: 'Management', value: 8, color: '#c7d2fe' }, // indigo-200
 ];
 
