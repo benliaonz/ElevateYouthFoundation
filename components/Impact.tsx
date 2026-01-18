@@ -16,17 +16,29 @@ export default function Impact() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Stats Section */}
-        <div className="grid grid-cols-2 gap-12 md:grid-cols-4 mb-32">
-          {STATS.map((stat) => (
-            <div key={stat.id} className="text-center group">
-              <div className="text-5xl md:text-6xl font-black text-indigo-950 mb-4 transition-transform group-hover:scale-110 duration-300">
-                {stat.prefix}{stat.value}{stat.suffix}
+        <div className="mb-32">
+          <div className="grid grid-cols-2 gap-12 md:grid-cols-4 mb-12">
+            {STATS.map((stat) => (
+              <div key={stat.id} className="text-center group">
+                <div className="text-5xl md:text-6xl font-black text-indigo-950 mb-4 transition-transform group-hover:scale-110 duration-300">
+                  {stat.prefix}{stat.value}{stat.suffix}
+                </div>
+                <div className="text-xs md:text-sm font-bold text-indigo-500 uppercase tracking-[0.2em]">
+                  {stat.label}
+                </div>
               </div>
-              <div className="text-xs md:text-sm font-bold text-indigo-500 uppercase tracking-[0.2em]">
-                {stat.label}
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          
+          <div className="flex justify-center">
+             <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white border border-indigo-100 text-xs font-semibold text-slate-500 shadow-sm transition-all hover:shadow-md hover:border-indigo-200">
+                <div className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                </div>
+                <span className="tracking-wide">Our impact metrics are verified and updated monthly to ensure transparency.</span>
+             </div>
+          </div>
         </div>
 
         {/* Financial Transparency */}
