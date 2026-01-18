@@ -62,7 +62,7 @@ export const PROGRAMS: Program[] = [
 ];
 
 export const STATS: Stat[] = [
-  { id: '1', label: 'Youth Supported', value: '30', suffix: '+' },
+  { id: '1', label: 'Youth Supported', value: '31', suffix: '+' },
   { id: '2', label: 'Scholarships', value: '0', prefix: '' },
   { id: '3', label: 'Mentors Active', value: '5', suffix: '+' },
   { id: '4', label: 'Success Rate', value: '85', suffix: '%' }
