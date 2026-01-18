@@ -25,8 +25,8 @@ export default function Trustees() {
                     alt={trustee.name} 
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                     onError={(e) => {
-                      // Fallback to a high-quality placeholder if the custom image isn't found
-                      e.currentTarget.src = "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=400&h=400";
+                      // Fallback to initials avatar if image fails (avoids confusion with old stock photos)
+                      e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(trustee.name)}&background=4f46e5&color=fff&size=256`;
                       e.currentTarget.onerror = null; // Prevent infinite loop
                     }}
                   />
