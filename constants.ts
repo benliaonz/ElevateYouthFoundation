@@ -14,13 +14,27 @@ export const ABOUT_TEXT = {
   legal: "We operate as a registered Charitable Trust under the Charitable Trusts Act 1957. We are committed to the highest standards of governance and transparency."
 };
 
+// Helper to automatically convert Google Drive sharing URLs to direct image URLs
+// We define this before PROGRAMS so it can be used there too.
+const formatDriveUrl = (url: string) => {
+  if (url.includes('drive.google.com')) {
+    // Extract ID from /file/d/ID/view or id=ID
+    const idMatch = url.match(/\/d\/(.*?)\//) || url.match(/id=(.*?)(&|$)/);
+    if (idMatch && idMatch[1]) {
+      // Use thumbnail endpoint with large size (sz=w1000) for reliability
+      return `https://drive.google.com/thumbnail?id=${idMatch[1]}&sz=w1000`;
+    }
+  }
+  return url;
+};
+
 export const PROGRAMS: Program[] = [
   {
     id: 'academic',
     title: 'Academic Excellence',
     description: 'Scholarships, tutoring, and educational resources for high-potential students facing financial barriers.',
     icon: BookOpen,
-    image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800',
+    image: formatDriveUrl('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800'),
     testimonials: [{ quote: "The scholarship allowed me to focus on my studies without worrying about fees.", author: "Sarah T.", role: "Scholarship Recipient" }]
   },
   {
@@ -28,7 +42,7 @@ export const PROGRAMS: Program[] = [
     title: 'Sports Development',
     description: 'Providing equipment, coaching, and travel grants for aspiring young athletes to compete at higher levels.',
     icon: Trophy,
-    image: 'https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&q=80&w=800',
+    image: formatDriveUrl('https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&q=80&w=800'),
     testimonials: [{ quote: "I made the representative team thanks to the new gear and coaching support.", author: "Mikaere W.", role: "Athlete" }]
   },
   {
@@ -36,14 +50,14 @@ export const PROGRAMS: Program[] = [
     title: 'Creative Arts',
     description: 'Funding for instruments, art supplies, and exhibition opportunities for young creatives.',
     icon: Palette,
-    image: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&q=80&w=800'
+    image: formatDriveUrl('https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&q=80&w=800')
   },
   {
     id: 'community',
     title: 'Community Leadership',
     description: 'Mentorship programs connecting youth with local community leaders to foster civic engagement.',
     icon: Users,
-    image: 'https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80&w=800'
+    image: formatDriveUrl('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80&w=800')
   }
 ];
 
@@ -59,20 +73,6 @@ export const FINANCIAL_DATA: FinancialData[] = [
   { name: 'Fundraising', value: 10, color: '#818cf8' }, // indigo-400
   { name: 'Management', value: 8, color: '#c7d2fe' }, // indigo-200
 ];
-
-// Helper to automatically convert Google Drive sharing URLs to direct image URLs
-// Using the thumbnail endpoint is often more reliable and bypasses some virus scan interstitial issues
-const formatDriveUrl = (url: string) => {
-  if (url.includes('drive.google.com')) {
-    // Extract ID from /file/d/ID/view or id=ID
-    const idMatch = url.match(/\/d\/(.*?)\//) || url.match(/id=(.*?)(&|$)/);
-    if (idMatch && idMatch[1]) {
-      // Use thumbnail endpoint with large size (sz=w1000)
-      return `https://drive.google.com/thumbnail?id=${idMatch[1]}&sz=w1000`;
-    }
-  }
-  return url;
-};
 
 export const TRUSTEES: Trustee[] = [
   {

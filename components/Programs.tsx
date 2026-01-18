@@ -20,11 +20,17 @@ export default function Programs() {
         <div className="grid gap-12 lg:grid-cols-2">
           {PROGRAMS.map((program) => (
             <div key={program.id} className="group relative bg-white rounded-[48px] overflow-hidden border border-indigo-50 hover:shadow-2xl transition-all duration-500 flex flex-col">
-              <div className="aspect-[16/9] overflow-hidden relative">
+              <div className="aspect-[16/9] overflow-hidden relative bg-indigo-50">
                 <img 
                   src={program.image} 
                   alt={program.title}
+                  referrerPolicy="no-referrer"
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
+                  onError={(e) => {
+                    // Fallback to a reliable placeholder if image fails
+                    e.currentTarget.src = 'https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80&w=800';
+                    e.currentTarget.onerror = null; 
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-indigo-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="absolute top-8 left-8">
