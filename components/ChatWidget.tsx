@@ -40,11 +40,20 @@ export default function ChatWidget() {
     setIsLoading(true);
 
     try {
-      // Safely access API key to prevent "process is not defined" error in browser
-      const apiKey = typeof process !== 'undefined' ? process.env?.API_KEY : '';
+      // Safely access API key. In some browser environments, accessing 'process' directly throws ReferenceError.
+      // We check typeof process first.
+      let apiKey = '';
+      try {
+        if (typeof process !== 'undefined' && process.env) {
+          apiKey = process.env.API_KEY || '';
+        }
+      } catch (e) {
+        // Fallback for environments where process is not defined/accessible
+        console.warn("Could not access process.env");
+      }
       
       if (!apiKey) {
-        throw new Error("API Key not found");
+        throw new Error("API Key configuration missing");
       }
 
       const ai = new GoogleGenAI({ apiKey });
