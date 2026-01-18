@@ -23,6 +23,7 @@ export default function Trustees() {
                   <img 
                     src={trustee.image} 
                     alt={trustee.name} 
+                    referrerPolicy="no-referrer"
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                     onError={(e) => {
                       // Fallback to initials avatar if image fails (avoids confusion with old stock photos)
@@ -80,7 +81,7 @@ export default function Trustees() {
               </p>
             </div>
             <div className="flex items-center">
-               <div className="px-6 py-3 bg-indigo-600 text-white rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] shadow-lg shadow-indigo-600/20">Next Meeting: Q4 2025</div>
+               <div className="px-6 py-3 bg-indigo-600 text-white rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] shadow-lg shadow-indigo-600/20">Next Meeting: JAN 2026</div>
             </div>
           </div>
         </div>

@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send, Sparkles } from 'lucide-react';
 import { GoogleGenAI } from "@google/genai";
@@ -41,7 +40,14 @@ export default function ChatWidget() {
     setIsLoading(true);
 
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+      // Safely access API key to prevent "process is not defined" error in browser
+      const apiKey = typeof process !== 'undefined' ? process.env?.API_KEY : '';
+      
+      if (!apiKey) {
+        throw new Error("API Key not found");
+      }
+
+      const ai = new GoogleGenAI({ apiKey });
       
       const history = messages
         .filter((_, i) => i > 0 || messages[0].role === 'user') 

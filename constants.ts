@@ -61,13 +61,13 @@ export const FINANCIAL_DATA: FinancialData[] = [
 ];
 
 // Helper to automatically convert Google Drive sharing URLs to direct image URLs
-// We use the thumbnail endpoint with a large size (sz=w1000) as it is more reliable for embedding
+// Using the default view URL with referrerPolicy="no-referrer" in the img tag is often more reliable
 const formatDriveUrl = (url: string) => {
   if (url.includes('drive.google.com')) {
-    // Extract ID from /file/d/ID/view or id=ID
+    // Extract ID from /file/d/ID/view or id=ID and return a standardized view URL
     const idMatch = url.match(/\/d\/(.*?)\//) || url.match(/id=(.*?)(&|$)/);
     if (idMatch && idMatch[1]) {
-      return `https://drive.google.com/thumbnail?id=${idMatch[1]}&sz=w1000`;
+      return `https://drive.google.com/uc?export=view&id=${idMatch[1]}`;
     }
   }
   return url;
